@@ -1,3 +1,3 @@
 <?php
 require_once'../include.php';
-verifyImage();
+verifyImage(2,4,10,3);

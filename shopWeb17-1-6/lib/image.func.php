@@ -12,7 +12,7 @@
          */
 function verifyImage($type = 1, $length = 4, $pixel = 0, $line = 0, $sess_name = "verify")
 {
-    
+   
     // ´´½¨»­²¼
     $width = 80;
     $height = 20;
@@ -76,6 +76,6 @@ function verifyImage($type = 1, $length = 4, $pixel = 0, $line = 0, $sess_name =
  
     }
  
-        verifyImage(2, 4, 10, 3);
+     //   verifyImage(2, 4, 10, 3);
 
 
