@@ -1,5 +1,5 @@
 <?php
-   require_once '../include.php';
+   require_once 'string.func.php';
         /**
          *  通过GD库创建验证码
          *  $width: 验证码图片宽度
