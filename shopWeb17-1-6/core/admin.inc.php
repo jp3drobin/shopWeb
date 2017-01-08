@@ -4,14 +4,16 @@
  * @param unknown_type $sql
  * @return Ambigous <multitype:, multitype:>
  */
-function checkAdmin($sql){
-	return fetchOne($sql);
+//封装一个验证账户登录的函数
+function checkAdmin($sql)
+{
+  return fetchOne($sql); //该方法定义在文件 mysql.func.php 中(基本的数据库操作方法文件)
 }
 /**
  * 检测是否有管理员登陆.
  */
 function checkLogined(){
-	if($_SESSION['adminId']==""&&$_COOKIE['adminId']==""){
+	if(@$_SESSION['adminId']==""&&@$_COOKIE['adminId']==""){
 		alertMes("请先登陆","login.php");
 	}
 }
