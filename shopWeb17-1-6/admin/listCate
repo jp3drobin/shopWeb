@@ -11,8 +11,8 @@ $offset=($page-1)*$pageSize;
 $sql="select id,cName from imooc_cate  order by id asc limit {$offset},{$pageSize}";
 $rows=fetchAll($sql);
 if(!$rows){
-	alertMes("sorry,没有分类,请添加!","addCate.php");
-	exit;
+    alertMes("sorry,没有分类,请添加!","addCate.php");
+    exit;
 }
 
 ?>
@@ -51,24 +51,24 @@ if(!$rows){
                             <?php endforeach;?>
                             <?php if($totalRows>$pageSize):?>
                             <tr>
-                            	<td colspan="4"><?php echo showPage($page, $totalPage);?></td>
+                                <td colspan="4"><?php echo showPage($page, $totalPage);?></td>
                             </tr>
                             <?php endif;?>
                         </tbody>
                     </table>
                 </div>
 <script type="text/javascript">
-	function editCate(id){
-		window.location="editCate.php?id="+id;
-	}
-	function delCate(id){
-		if(window.confirm("您确定要删除吗？删除之后不能恢复哦！！！")){
-			window.location="doAdminAction.php?act=delCate&id="+id;
-		}
-	}
-	function addCate(){
-		window.location="addCate.php";
-	}
+    function editCate(id){
+        window.location="editCate.php?id="+id;
+    }
+    function delCate(id){
+        if(window.confirm("您确定要删除吗？删除之后不能恢复哦！！！")){
+            window.location="doAdminAction.php?act=delCate&id="+id;
+        }
+    }
+    function addCate(){
+        window.location="addCate.php";
+    }
 </script>
 </body>
 </html>
