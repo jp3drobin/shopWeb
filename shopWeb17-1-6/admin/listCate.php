@@ -1,6 +1,6 @@
 <?php 
 require_once '../include.php';
-$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
+@$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
 $sql="select * from imooc_cate";
 $totalRows=getResultNum($sql);
 $pageSize=2;
