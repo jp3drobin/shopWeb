@@ -3,11 +3,11 @@ require_once '../include.php';
 @$page=$_REQUEST['page']?(int)$_REQUEST['page']:1;
 $sql="select * from imooc_cate";
 $totalRows=getResultNum($sql);
-$pageSize=2;
-$totalPage=ceil($totalRows/$pageSize);
+$pageSize=2;//一页2条
+$totalPage=ceil($totalRows/$pageSize); //总页码数
 if($page<1||$page==null||!is_numeric($page))$page=1;
 if($page>=$totalPage)$page=$totalPage;
-$offset=($page-1)*$pageSize;
+$offset=($page-1)*$pageSize;  //偏移量
 $sql="select id,cName from imooc_cate  order by id asc limit {$offset},{$pageSize}";
 $rows=fetchAll($sql);
 if(!$rows){
@@ -41,7 +41,7 @@ if(!$rows){
                             </tr>
                         </thead>
                         <tbody>
-                        <?php  foreach($rows as $row):?>
+                        <?php  foreach($rows as $row):?>   <!--循环出分类记录-->
                             <tr>
                                 <!--这里的id和for里面的c1 需要循环出来-->
                                 <td><input type="checkbox" id="c1" class="check"><label for="c1" class="label"><?php echo $row['id'];?></label></td>

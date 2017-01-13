@@ -94,7 +94,7 @@ function update($table, $array, $where = null)
   $sql = "update {$table} set {$str} " . ($where == null ? null : " where " . $where);
 //  echo $sql . "<br/>";
   $result = mysqli_query(connect(), $sql);
-  return $result; //存在的问题，没有阻止更新到一个数据库中存在的值
+  return $result; //存在的问题，没有阻止更新到一个数据库中已经存在的值
 }
 
 /**

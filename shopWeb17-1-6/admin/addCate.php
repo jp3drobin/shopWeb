@@ -16,9 +16,6 @@
 		<tr>
 		<td colspan="2" ><input type="submit" value="添加分类"/></td>
 		</tr>
-		
-
-
 </table>
 
 </form>
