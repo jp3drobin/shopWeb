@@ -164,7 +164,7 @@ function fetchAll($sql, $result_type = MYSQLI_ASSOC)
 //  return $rows;
   $conn = connect();
   $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
+  if(@$result->num_rows > 0) {
     //输出每行数据
     while ($row = $result->fetch_assoc()) {
       $rows[] = $row;
@@ -172,7 +172,7 @@ function fetchAll($sql, $result_type = MYSQLI_ASSOC)
   } else {
     echo "未查询到结果";
   }
-  return $rows;
+  return @$rows;
 }
 
 /**
@@ -190,7 +190,7 @@ function getResultNum($sql)
 //  return mysql_num_rows($result);
   $conn = connect();
   $result = $conn->query($sql);
-  $totalRows = $result->num_rows;
+  @$totalRows = $result->num_rows;
   return $totalRows;
 }
 /**

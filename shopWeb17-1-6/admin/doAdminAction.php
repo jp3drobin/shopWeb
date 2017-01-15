@@ -29,7 +29,7 @@ if ($act == "logout") {
 </head>
 <body>
 <?php
-if ($mes) {
+if (@$mes) {
   echo $mes;
 }
 ?>
