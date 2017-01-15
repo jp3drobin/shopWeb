@@ -21,3 +21,19 @@
         return substr($chars, 0, $length);
  
     }
+    /**
+     * 生成唯一字符串
+     * @return {[type]} [description]
+     */
+    function getUniName(){
+        return md5(uniqid(microtime(true),true));
+
+    }
+    /**
+     * 得带文件的扩展名
+     * @param  string $filename [description]
+     * @return   string        [description]
+     */
+    function getExt($filename){
+        return strtolower(end(explode(".",$filename)));
+    }
